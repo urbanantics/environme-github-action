@@ -31,7 +31,7 @@ describe('Run environMe command to convert text files based on environment confi
     fs.writeFileSync("test/test.props.yml", propsContent, 'utf8')
     
     // Act
-    test.environMe("test/*", "PROD")
+    test.environMe("test/*", "PROD");
 
     // Assert
     const fileExists = fs.existsSync("test/test.html")
