@@ -1,15 +1,18 @@
 on: [push]
 
 jobs:
-  hello_world_job:
+  environme_job:
     runs-on: ubuntu-latest
-    name: A job to say hello
+    name: Environ Me
     steps:
-    - name: Hello world action step
-      id: hello
-      uses: actions/environme-github-action@v1
-      with:
-        who-to-greet: 'Mona the Octocat'
-    # Use the output from the `hello` step
-    - name: Get the output time
-      run: echo "The time was ${{ steps.hello.outputs.time }}"
+      - uses: actions/checkout@v2
+      - name: Use Node.js ${{ matrix.node-version }}
+        uses: actions/setup-node@v1
+        with:
+          node-version: ${{ matrix.node-version }}
+      - name: Environ Me action step
+        id: EnvironMe
+        uses: urbanantics/environme-github-action@v1
+        with:
+          path: '**/*'
+      - run: ls test
