@@ -10,3 +10,5 @@ jobs:
       uses: urbanantics/environme-github-action@v1
       with:
         path: '*'
+    - run: ls
+        working-directory: ./test
