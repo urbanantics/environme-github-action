@@ -1,0 +1,15 @@
+name: Environ Me'
+description: 'Generate output file using a template file and a properites file'
+inputs:
+  path:  # id of input
+    description: 'wildcard path to template files that will be used to generate output'
+    required: true
+    default: '*'
+
+  targetEnvironment:  # id of input
+    description: 'Environment key used to override configuration in properties object that will be replaced into template file'
+    required: false
+
+runs:
+  using: 'node12'
+  main: 'index.js'

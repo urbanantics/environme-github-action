@@ -1,0 +1,25 @@
+{
+  "name": "environme-github-action",
+  "version": "1.0.0",
+  "description": "Separate out the parts that change Github action",
+  "main": "index.js",
+  "scripts": {
+    "test": "mocha"
+  },
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/urbanantics/environme-github-action.git"
+  },
+  "keywords": [],
+  "author": "",
+  "license": "ISC",
+  "bugs": {
+    "url": "https://github.com/urbanantics/environme-github-action/issues"
+  },
+  "homepage": "https://github.com/urbanantics/environme-github-action#readme",
+  "dependencies": {
+    "@actions/core": "^1.2.2",
+    "@actions/github": "^2.1.0",
+    "@urbanantics/environme": "^1.0.8"
+  }
+}
