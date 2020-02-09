@@ -5,10 +5,10 @@ jobs:
     runs-on: ubuntu-latest
     name: Environ Me
     steps:
-    - name: Environ Me action step
-      id: EnvironMe
-      uses: urbanantics/environme-github-action@v1
-      with:
-        path: '*'
-    - run: ls
-        working-directory: ./test
+      - name: Environ Me action step
+        id: EnvironMe
+        uses: urbanantics/environme-github-action@v1
+        with:
+          path: '*'
+      - run: ls
+          working-directory: ./test
