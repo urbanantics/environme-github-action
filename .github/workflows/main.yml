@@ -10,4 +10,5 @@ jobs:
         uses: urbanantics/environme-github-action@v1
         with:
           path: '*'
+      - run: pwd
       - run: ls -lart /
