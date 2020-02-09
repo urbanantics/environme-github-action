@@ -11,4 +11,4 @@ jobs:
         with:
           path: '*'
       - run: ls
-          working-directory: ./test
+        working-directory: ./test
