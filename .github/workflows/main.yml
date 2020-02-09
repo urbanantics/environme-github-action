@@ -11,4 +11,8 @@ jobs:
         with:
           path: '*'
       - run: pwd
-      - run: ls -lart /
+      - run: ls -lart /home/runner/work/environme-github-action/environme-github-action
+      - run: ls -lart /home/runner/work/environme-github-action/
+      - run: ls -lart /home/runner/work/
+      - run: ls -lart /home/runner/
+      - run: ls -lart /home/
