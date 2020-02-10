@@ -15,4 +15,4 @@ jobs:
         uses: urbanantics/environme-github-action@v0.0.0
         with:
           path: '**/*'
-      - run: ls basic/test
+      - run: ls test
