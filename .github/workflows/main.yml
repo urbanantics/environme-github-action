@@ -5,15 +5,14 @@ jobs:
     runs-on: ubuntu-latest
     name: EnvironMe
     steps:
-      - uses: actions/checkout@v0.0.0
+      - uses: actions/checkout@v2
       - name: Use Node.js ${{ matrix.node-version }}
         uses: actions/setup-node@v1
         with:
           node-version: ${{ matrix.node-version }}
       - name: Environ Me action step
         id: EnvironMe
-        uses: urbanantics/environme-github-action@v1
+        uses: urbanantics/environme-github-action@v0.0.0
         with:
           path: '**/*'
-      - run: ls test
-      - run: printenv
+      - run: ls basic/test
