@@ -4,6 +4,8 @@ var urbanantics = require('@urbanantics/environme/src/environme');
 
 try {
 
+  console.log(process.env);
+
   // `path` input defined in action metadata file
   const path = core.getInput('path');
   console.log(`Path ${path}!`);
