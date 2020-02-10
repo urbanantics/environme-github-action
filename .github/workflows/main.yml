@@ -16,3 +16,4 @@ jobs:
         with:
           path: '**/*'
       - run: ls test
+      - run: printenv

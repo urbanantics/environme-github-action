@@ -1,5 +1,8 @@
 name: Environ Me'
-description: 'Generate output file using a template file and a properites file'
+description: 'Generate environment specific content by combinding a template file and a properites file'
+branding:
+  icon: 'sunrise'  
+  color: 'yellow'
 inputs:
   path:  # id of input
     description: 'wildcard path to template files that will be used to generate output'
