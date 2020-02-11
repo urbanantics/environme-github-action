@@ -8,7 +8,10 @@ try {
 
   // `path` input defined in action metadata file
   const path = core.getInput('path');
-  console.log(`Path ${path}!`);
+  console.log(`Path ${path}`);
+
+  const branchMapping = core.getInput('branchMapping');
+  console.log(branchMapping);
 
   const branchName  = process.env.GITHUB_HEAD_REF;
   console.log(`branchName: ${branchName}!!`);
