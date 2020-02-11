@@ -20,7 +20,7 @@ try {
   console.log(`branchName: ${branchName}!!`);
 
   // `targetEnvironment` input defined in action metadata file
-  const targetEnvironment = core.getInput('targetEnvironment');
+  var targetEnvironment = core.getInput('targetEnvironment');
   console.log(`targetEnvironment IN ${targetEnvironment}!`);
 
   targetEnvironment = targetEnvironment || urbanantics.mapBranches();
