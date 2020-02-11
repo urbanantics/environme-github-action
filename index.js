@@ -10,14 +10,11 @@ try {
   const path = core.getInput('path');
   console.log(`Path ${path}`);
 
-  const branchName  = process.env.GITHUB_HEAD_REF;
+  const branchName  = process.env.GITHUB_REF;
   console.log(`branchName: ${branchName}!!`);
 
   const branchMapping = core.getInput('branchMapping');
   console.log(branchMapping);
-
-  const outputVariables = core.getInput('outputVariables');
-  console.log(outputVariables);
 
   // `targetEnvironment` input defined in action metadata file
   var targetEnvironment = core.getInput('targetEnvironment');
@@ -26,14 +23,7 @@ try {
   targetEnvironment = targetEnvironment || urbanantics.mapBranches(branchMapping, branchName);
   console.log(`targetEnvironment after mapping ${targetEnvironment}!`);
 
-  var flatObj = urbanantics.environMe(path, targetEnvironment, true);
-
-  if(outputVariables) {
-    for(const key in flatObj){
-      console.log(`Writing env ${key}: ${flatObj[key]}`)
-      process.env[key] = flatObj[key];
-    }
-  }
+  urbanantics.environMe(path, targetEnvironment, true);
 
   // Get the JSON webhook payload for the event that triggered the workflow
   const payload = JSON.stringify(github.context.payload, undefined, 2)
