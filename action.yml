@@ -8,10 +8,14 @@ inputs:
     description: 'wildcard path to template files that will be used to generate output'
     required: true
     default: '*'
-
   targetEnvironment:  # id of input
     description: 'Environment key used to override configuration in properties object that will be replaced into template file'
     required: false
+  branchMapping:
+    description: "Key/value array representing branch mapping to environment in form branch1=Evn1,branch2=Env2.."
+    required: false
+  outputVariables:
+    description: "Boolean representing whether to output configuration into environment variables"
 
 runs:
   using: 'node12'
