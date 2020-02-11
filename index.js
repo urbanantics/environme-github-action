@@ -10,27 +10,27 @@ try {
   const path = core.getInput('path');
   console.log(`Path ${path}`);
 
+  const branchName  = process.env.GITHUB_HEAD_REF;
+  console.log(`branchName: ${branchName}!!`);
+
   const branchMapping = core.getInput('branchMapping');
   console.log(branchMapping);
 
   const outputVariables = core.getInput('outputVariables');
   console.log(outputVariables);
 
-  const branchName  = process.env.GITHUB_HEAD_REF;
-  console.log(`branchName: ${branchName}!!`);
-
   // `targetEnvironment` input defined in action metadata file
   var targetEnvironment = core.getInput('targetEnvironment');
   console.log(`targetEnvironment IN ${targetEnvironment}!`);
 
-  targetEnvironment = targetEnvironment || urbanantics.mapBranches();
+  targetEnvironment = targetEnvironment || urbanantics.mapBranches(branchMapping, branchName);
   console.log(`targetEnvironment after mapping ${targetEnvironment}!`);
 
   var flatObj = urbanantics.environMe(path, targetEnvironment, true);
 
   if(outputVariables) {
     for(const key in flatObj){
-      console.log(`Writing env ${process.env.key}: ${flatObj[key]}`)
+      console.log(`Writing env ${key}: ${flatObj[key]}`)
       process.env[key] = flatObj[key];
     }
   }

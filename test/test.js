@@ -38,7 +38,7 @@ describe('Run environMe command to convert text files based on environment confi
     const actualContent = fs.readFileSync("test/test.html", 'utf8')
 
     assert.equal(fileExists, true);
-    assert.equal(expectedContent, actualContent);
+    assert.equal(actualContent, expectedContent);
 
     // Tidy
     //fs.unlinkSync("test/test.html")
@@ -83,7 +83,7 @@ describe('Replace Environment Variable References', function () {
       };
   
       const expectedObj = {
-        "a.b.c": "my_value"
+        "a_b_c": "my_value"
       };
   
       const flatObj = test.flattenObj(sourceObj)
